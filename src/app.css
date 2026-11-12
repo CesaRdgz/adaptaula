@@ -1,0 +1,113 @@
+:root {
+  --fondo: #f6f4ef;
+  --hoja: #ffffff;
+  --texto: #1d1b16;
+  --suave: #6b665c;
+  --acento: #2f6f5e;
+  --borde: #d9d4c7;
+  --error: #a3341f;
+  --mesa: #e9e5dc;
+  font-family: system-ui, sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #17150f;
+    --hoja: #22201a;
+    --texto: #ece8de;
+    --suave: #a8a294;
+    --borde: #3a362c;
+    --acento: #7cc4ad;
+    --error: #f08a72;
+    --mesa: #2a271f;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--fondo);
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.9rem 1.5rem;
+  border-bottom: 1px solid var(--borde);
+}
+.marca {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--acento);
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  gap: 1rem;
+}
+nav a {
+  color: var(--suave);
+  text-decoration: none;
+}
+nav a.activo {
+  color: var(--texto);
+  font-weight: 600;
+}
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+main.ancho {
+  max-width: 82rem;
+}
+.cargando {
+  color: var(--suave);
+}
+a {
+  color: var(--acento);
+}
+button {
+  font: inherit;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  background: var(--hoja);
+  color: var(--texto);
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+button.principal {
+  background: var(--acento);
+  border-color: var(--acento);
+  color: var(--hoja);
+  font-weight: 600;
+}
+code {
+  background: var(--mesa);
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+}
+
+@page {
+  size: A4;
+  margin: 20mm;
+}
+@media print {
+  body,
+  :root {
+    background: #fff;
+  }
+  main {
+    max-width: none;
+    padding: 0;
+  }
+  .no-imprimir {
+    display: none !important;
+  }
+}
